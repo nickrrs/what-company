@@ -10,14 +10,13 @@ export default class CompanyService {
         try {
           let keyword = req.query?.keyword ? req.query?.keyword?.toString() : '';
 
-          const response = await axios.get('https://www.google.com/search?client=opera-gx&q=devsquad+glassdoor');
+          const response = await axios.get('https://www.google.com/search?client=opera-gx&q=company+glassdoor');
 
           if(response.data.length == 0) throw new Error("Erro ao trazer infos da empresa");
           
           console.log(response.data);
         //   const $ = cheerio.load(response.data);
       
-        //   // Aqui você pode usar o seletor CSS para extrair informações da página
         //   const title = $('h1').text();
         //   const paragraphs = $('p').map((_, element) => $(element).text()).get();
       
